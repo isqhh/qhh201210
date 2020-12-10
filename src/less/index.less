@@ -1,0 +1,37 @@
+
+@bColor:transparent;
+@bstyle:solid;
+.mixin(@size,@color,@direction){
+    width: 0;
+    height: 0;
+    border-color: @bColor;
+    border-style:@bstyle ;
+    float: left;
+    border-width: @size;
+    border-@{direction}: @size @bstyle @color;
+}
+.one{
+    .mixin(30px ,yellow,right);
+}
+.two{
+    .mixin(20px ,red,right,);
+}
+.three{
+    .mixin(30px ,yellow,top);
+}
+.four{
+    .mixin(20px ,orange,top);
+}
+.five{
+    .mixin(30px ,blue,left);
+}
+.six{
+    .mixin(20px ,green,left);
+}
+.seven{
+    .mixin(30px ,red,bottom);
+}
+.eight{
+    .mixin(20px ,green,bottom);
+    margin-top: -10px;
+}
